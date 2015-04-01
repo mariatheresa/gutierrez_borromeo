@@ -13,7 +13,7 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/notif"
         android:layout_width="329dp"
         android:layout_height="81dp"
         android:layout_gravity="center"

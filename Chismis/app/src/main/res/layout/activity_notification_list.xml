@@ -4,23 +4,23 @@
     tools:context="cobi.tess.activities.Notification"
     android:background="#FFFFFF">
 
-<RelativeLayout
-    android:layout_width="400dp"
-    android:layout_height="3dp"
-    android:background="#000000"
-    android:layout_below="@+id/name"
-    android:layout_centerHorizontal="true">
-</RelativeLayout>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/list"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/name"
+        android:text="\@andy123 commented your photo"
+        android:id="@+id/notif"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColor="#215352"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:phoneNumber="true" />
+
 </RelativeLayout>

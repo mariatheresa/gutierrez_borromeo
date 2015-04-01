@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.theresa.chismis" >
+    package="com.example.theresa.chismis"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/lo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat"
+        android:uiOptions="splitActionBarWhenNarrow">
         <activity
             android:name=".Login"
             android:label="@string/app_name" >
@@ -19,7 +26,7 @@
 
         <activity
             android:name=".Register"
-            android:label="@string/app_name" >
+            android:icon="@drawable/lo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +45,10 @@
         </activity>
         <activity
             android:name=".Homepage"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:logo="@drawable/lo">
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"></meta-data>
 
         </activity>
         <activity

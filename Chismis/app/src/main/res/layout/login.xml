@@ -32,7 +32,7 @@
         android:layout_marginBottom="0dp"
         android:textSize="30px"
         android:textColor="#FFFFFF"
-        android:textColorHint="#ffc3c3c3" />
+        android:textColorHint="#FFFFFF" />
 
     <EditText
         android:id="@+id/editText5"
@@ -51,7 +51,7 @@
         android:layout_above="@+id/textView2"
         android:layout_weight="0"
         android:textColor="#ffffffff"
-        android:textColorHint="#FFC3C3C3" />
+        android:textColorHint="#FFFFFF" />
 
     <Button
         android:id="@+id/button1"
