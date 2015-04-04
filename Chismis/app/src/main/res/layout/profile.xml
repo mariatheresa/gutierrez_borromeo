@@ -18,38 +18,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tess Saito"
-        android:id="@+id/username"
+        android:text="Tess Saito;"
+        android:id="@+id/names"
         android:textSize="30dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp" />
+        android:textColor="#215352"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/email"
+        android:layout_toLeftOf="@+id/email"
+        android:layout_toStartOf="@+id/email" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="tessy_1"
+        android:text="tessy_1@gmail.com"
         android:id="@+id/email"
         android:textSize="25dp"
-        android:layout_alignBottom="@+id/username"
-        android:layout_toRightOf="@+id/username"
-        android:layout_toEndOf="@+id/username"
-        android:layout_marginLeft="20dp" />
+        android:textColor="#215352"
+        android:layout_below="@+id/pp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="19dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tired soooo tired! lol. ok. sleep no sleap. #teamNoSleep"
+        android:text=" Hi i&apos;m olaf! I love warm hugs :3 I love summer"
         android:id="@+id/desc"
-        android:layout_below="@+id/username"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username"
+        android:layout_below="@+id/names"
+        android:layout_alignLeft="@+id/names"
+        android:layout_alignStart="@+id/names"
         android:textSize="26dp"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp"
+        android:textColor="#215352"
+        android:textStyle="italic"/>
 
     <Button
         android:layout_width="wrap_content"

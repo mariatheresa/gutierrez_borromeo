@@ -24,10 +24,13 @@ import Model.NotifModel;
  */
 public class FragmentTwo extends Fragment  {
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.activity_notification_list, container, false);
+
+        ListView list = (ListView) rootView.findViewById(R.id.list);
+        NotifAdapter adapter = new NotifAdapter (this.getActivity(), NotifModel.notifModel());
+        list.setAdapter(adapter);
 
         return rootView;
     }
@@ -38,6 +41,8 @@ public class FragmentTwo extends Fragment  {
 
 
     }
+
+
 
 
 }

@@ -11,7 +11,7 @@ import Information.Notif;
  */
 public class NotifModel {
     static final String val[]={"@Jacob123", "@123Maria", "@123Dahlia", "@123Angela", "@123Jestin", "@123Vincent", "@123Jeremy", "@123Jeremy", "@123Stephen", "@123Klifford"};
-    static final String msg[]={"favorite your chika!", "commented on your chika", "favorite your chika!", "commented on your chika","favorite your chika!", "commented on your chika", "favorite your chika!", "commented on your chika","favorite your chika!", "commented on your chika"};
+    static final String msg[]={"accepts your request", "accepts your request", "accepts your request", "accepts your request","accepts your request", "accepts your request", "accepts your request", "accepts your request","accepts your request", "accepts your request"};
 
     public static ArrayList<Notif> notifModel()
     {

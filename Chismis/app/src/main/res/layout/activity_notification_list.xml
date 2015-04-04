@@ -14,13 +14,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="\@andy123 commented your photo"
         android:id="@+id/notif"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColor="#215352"
         android:layout_margin="10dp"
-        android:phoneNumber="true" />
+        android:phoneNumber="true"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/action"
+        android:textColor="#215352"
+        android:phoneNumber="true"
+        android:textSize="17dp"
+        android:layout_alignTop="@+id/notif"
+        android:layout_toRightOf="@+id/notif"
+        android:layout_toEndOf="@+id/notif" />
 
 </RelativeLayout>

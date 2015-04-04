@@ -1,17 +1,23 @@
 package Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.theresa.chismis.Homepage;
+import com.example.theresa.chismis.Profile;
 import com.example.theresa.chismis.R;
 
 import java.util.ArrayList;
 
+import Fragment_Class.FragmentThree;
 import Information.Notif;
+import Information.Prof;
 
 /**
  * Created by theresa on 1/4/15.
@@ -46,10 +52,18 @@ public class NotifAdapter extends ArrayAdapter<String> {
 
 
         TextView tv = (TextView) v.findViewById(R.id.notif);
+        TextView co = (TextView) v.findViewById(R.id.action);
 
+        tv.setText(notif.get(position).getName());
+        co.setText(notif.get(position).getComment());
 
-        tv.setText(notif.get(position).getName()+" "+notif.get(position).getComment());
-
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Profile.class);
+                v.getContext().startActivity(intent);
+            }
+        });
         return v;
     }
 
@@ -57,7 +71,5 @@ public class NotifAdapter extends ArrayAdapter<String> {
     public int getCount() {
         return notif.size();
     }
-
-
 
 }

@@ -4,10 +4,20 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.example.theresa.chismis.R;
+
+import Adapter.NotifAdapter;
+import Adapter.OwnAdapter;
+import Information.Prof;
+import Model.NotifModel;
+import Model.ProfileGenerator;
 
 /**
  * Created by theresa on 26/3/15.
@@ -15,7 +25,19 @@ import com.example.theresa.chismis.R;
 public class FragmentOne  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.homepage_list,container,false);
+        View rootView = inflater.inflate(R.layout.homepage_list, container, false);
 
+        ListView list = (ListView) rootView.findViewById(R.id.list2);
+        OwnAdapter adapter = new OwnAdapter(this.getActivity(), ProfileGenerator.generateProfs());
+        list.setAdapter(adapter);
+        return rootView;
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+
+
 }

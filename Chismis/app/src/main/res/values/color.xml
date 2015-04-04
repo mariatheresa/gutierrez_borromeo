@@ -140,4 +140,5 @@
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
     <color name="ThemeBG">#215352</color>
+    <color name="text_like_counter">#2b5a83</color>
 </resources>

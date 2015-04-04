@@ -4,11 +4,15 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/customListview"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Theresa Gutierrez"
         android:id="@+id/notif"
         android:textSize="20dp"
         android:textColor="#000000"
@@ -17,7 +21,8 @@
         android:layout_toStartOf="@+id/accept"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:clickable="true" />
 
     <Button
         android:layout_width="70dp"
@@ -29,7 +34,7 @@
         android:layout_alignParentEnd="true"
         android:background="#215352"
         android:textColor="#FFFFFF"
-        android:onClick="click"/>
+        android:clickable="true" />
 
     <Button
         android:layout_width="70dp"
@@ -40,26 +45,18 @@
         android:layout_toLeftOf="@+id/decline"
         android:layout_toStartOf="@+id/decline"
         android:background="@color/Yellow"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:clickable="true" />
 
     <ImageView
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
-        android:src="@drawable/guy"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignBottom="@+id/accept"
         android:layout_toLeftOf="@+id/notif"
         android:layout_toStartOf="@+id/notif"
-        android:layout_alignParentTop="true" />
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/list"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
 
