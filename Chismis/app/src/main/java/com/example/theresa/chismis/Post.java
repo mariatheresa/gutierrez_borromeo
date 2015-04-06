@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.io.File;
@@ -31,20 +32,23 @@ import java.io.OutputStream;
 public class Post extends ActionBarActivity {
 
     ImageView viewImage;
-    Button b;
+    Button b, c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chikka_post);
         b=(Button)findViewById(R.id.btnSelectPhoto);
+
         viewImage=(ImageView)findViewById(R.id.viewImage);
+
         b.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 selectImage();
             }
         });
+
     }
 
     @Override
@@ -63,8 +67,8 @@ public class Post extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.post, menu);
         return true;
     }
-    private void selectImage() {
 
+    private void selectImage() {
         final CharSequence[] options = { "Take Photo", "Choose from Gallery","Cancel" };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Post.this);
@@ -74,6 +78,7 @@ public class Post extends ActionBarActivity {
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Take Photo"))
                 {
+
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     File f = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
@@ -81,6 +86,7 @@ public class Post extends ActionBarActivity {
                 }
                 else if (options[item].equals("Choose from Gallery"))
                 {
+
                     Intent intent = new   Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 2);
 
@@ -89,7 +95,8 @@ public class Post extends ActionBarActivity {
                     dialog.dismiss();
                 }
             }
-        });
+        }  );
+
         builder.show();
     }
 
@@ -136,11 +143,12 @@ public class Post extends ActionBarActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
             } else if (requestCode == 2) {
 
                 Uri selectedImage = data.getData();
-                String[] filePath = { MediaStore.Images.Media.DATA };
-                Cursor c = getContentResolver().query(selectedImage,filePath, null, null, null);
+                String[] filePath = {MediaStore.Images.Media.DATA};
+                Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
                 c.moveToFirst();
                 int columnIndex = c.getColumnIndex(filePath[0]);
                 String picturePath = c.getString(columnIndex);
@@ -148,9 +156,44 @@ public class Post extends ActionBarActivity {
                 Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
                 Log.w("path of image from gallery......******************.........", picturePath + "");
                 viewImage.setImageBitmap(thumbnail);
+
             }
         }
+        c =(Button)findViewById(R.id.close);
+        if(viewImage!=null) {
+            c.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    deletePhoto();
+                }
+            });
+        }
     }
+        private void deletePhoto(){
+
+            final ImageView imageView= (ImageView) findViewById(R.id.viewImage);
+            final CharSequence[] options = { "Yes", "No" };
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(Post.this);
+            builder.setTitle("Are you sure you want to delete?");
+            builder.setItems(options, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int item) {
+                    if (options[item].equals("Yes"))
+                    {
+                        imageView.setImageDrawable(null);
+                    }
+                    else if (options[item].equals("No"))
+                    {
+                        dialog.dismiss();
+
+                    }
+                }
+            });
+            builder.show();
+        }
+
+
 
 }
 

@@ -129,8 +129,10 @@ public class Homepage extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-                Intent intent=new Intent(this, Login.class);
-                startActivity(intent);
+                Intent i = new Intent(this, Login.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+                finish();
             return true;
             case R.id.Status:
                 Intent intent1= new Intent(this,Post.class);

@@ -4,20 +4,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.widget.AdapterView;
 import android.widget.ListView;
-
 import com.example.theresa.chismis.R;
-
-import Adapter.NotifAdapter;
 import Adapter.OwnAdapter;
-import Information.Prof;
-import Model.NotifModel;
 import Model.ProfileGenerator;
+
+import java.util.Date;
 
 /**
  * Created by theresa on 26/3/15.

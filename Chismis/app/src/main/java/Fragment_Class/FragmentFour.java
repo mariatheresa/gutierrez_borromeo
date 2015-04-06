@@ -25,8 +25,9 @@ public class FragmentFour extends Fragment {
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Login.class);
-                getActivity().startActivity(intent);
+                Intent i = new Intent(getActivity(), Login.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
             }
         });
         return v;

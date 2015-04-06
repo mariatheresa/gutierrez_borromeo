@@ -12,7 +12,10 @@ import android.widget.TextView;
 import com.example.theresa.chismis.Profile;
 import com.example.theresa.chismis.R;
 
+import org.ocpsoft.prettytime.PrettyTime;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import Information.Prof;
@@ -61,6 +64,11 @@ public class OwnAdapter  extends BaseAdapter {
             v= convertView;
         }
 
+        PrettyTime p = new PrettyTime();
+       // System.out.println(p.format(new Date()));
+
+        TextView date=(TextView) v.findViewById(R.id.date);
+        date.setText(p.format(new Date()));
 
         TextView uName = (TextView) v.findViewById(R.id.notif);
         TextView post = (TextView) v.findViewById(R.id.action);

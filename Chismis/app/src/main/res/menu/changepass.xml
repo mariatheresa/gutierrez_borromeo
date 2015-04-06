@@ -5,7 +5,7 @@
     tools:context="cobi.tess.ChangePass" >
 
     <item
-        android:id="@+id/changePass"
+        android:id="@+id/change"
         android:orderInCategory="100"
         android:title="@string/changePass"
         app:showAsAction="always"/>

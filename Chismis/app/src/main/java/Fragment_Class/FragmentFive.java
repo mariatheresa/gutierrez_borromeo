@@ -7,8 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.theresa.chismis.Homepage;
 import com.example.theresa.chismis.R;
@@ -29,26 +32,10 @@ public class FragmentFive extends Fragment {
         View rootView=inflater.inflate(R.layout.activity_friend_list, container, false);
 
         ListView list = (ListView) rootView.findViewById(R.id.customListview);
-        FriendAdapter adapter = new FriendAdapter (this.getActivity(), Friend.generateFriends());
+        final FriendAdapter adapter = new FriendAdapter (this.getActivity(), Friend.generateFriends());
         list.setAdapter(adapter);
 
-       /* Button decline = (Button) rootView.findViewById(R.id.decline);
-        Button accept = (Button) rootView.findViewById(R.id.accept);
 
-        decline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Homepage.class);
-                getActivity().startActivity(intent);
-            }
-        });
-        accept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Homepage.class);
-                getActivity().startActivity(intent);
-            }
-        }); */
         return rootView;
     }
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -61,16 +62,22 @@ public class FriendAdapter extends BaseAdapter {
         {
             LayoutInflater inflate = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             v = inflate.inflate(R.layout.activity_friend_list, parent, false);
+
         } else {
 
             v= convertView;
         }
-
-
-        TextView uName = (TextView) v.findViewById(R.id.notif);
-        ImageView imgView = (ImageView) v.findViewById(R.id.imageView4);
-        Button acc = (Button) v.findViewById(R.id.accept);
-        Button dec = (Button) v.findViewById(R.id.decline);
+      /*  RelativeLayout parentLayout = (RelativeLayout) v.findViewById(R.id.ld);
+        if (shouldDisplayItem(position)) {
+            parentLayout.setVisibility(View.VISIBLE);
+        } else {
+            parentLayout.setVisibility(View.GONE);
+        }
+*/
+        final TextView uName = (TextView) v.findViewById(R.id.notif);
+        final ImageView imgView = (ImageView) v.findViewById(R.id.imageView4);
+        final Button acc = (Button) v.findViewById(R.id.accept);
+        final Button dec = (Button) v.findViewById(R.id.decline);
 
         uName.setText(friends.get(position).getName());
         imgView.setImageResource(friends.get(position).getImage_Ref());
@@ -78,13 +85,21 @@ public class FriendAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "accepted the request",Toast.LENGTH_SHORT).show();
-            }
+                  uName.setVisibility(View.GONE);
+                    imgView.setVisibility(View.GONE);
+                acc.setVisibility(View.GONE);
+                dec.setVisibility(View.GONE);
+                }
         });
 
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "denied the request",Toast.LENGTH_SHORT).show();
+                uName.setVisibility(View.GONE);
+                imgView.setVisibility(View.GONE);
+                acc.setVisibility(View.GONE);
+                dec.setVisibility(View.GONE);
             }
         });
 

@@ -2,22 +2,21 @@ package Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.theresa.chismis.Homepage;
 import com.example.theresa.chismis.Profile;
 import com.example.theresa.chismis.R;
 
 import java.util.ArrayList;
+import java.util.Date;
 
-import Fragment_Class.FragmentThree;
+import org.ocpsoft.prettytime.PrettyTime;
+
 import Information.Notif;
-import Information.Prof;
 
 /**
  * Created by theresa on 1/4/15.
@@ -49,7 +48,11 @@ public class NotifAdapter extends ArrayAdapter<String> {
 
             v= convertView;
         }
+        PrettyTime p = new PrettyTime();
+        // System.out.println(p.format(new Date()));
 
+        TextView date=(TextView) v.findViewById(R.id.dates);
+        date.setText(p.format(new Date()));
 
         TextView tv = (TextView) v.findViewById(R.id.notif);
         TextView co = (TextView) v.findViewById(R.id.action);

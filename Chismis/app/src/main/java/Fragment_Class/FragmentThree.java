@@ -24,6 +24,7 @@ public class FragmentThree extends Fragment {
         Button clickMe = (Button) rootView.findViewById(R.id.update);
         Button post = (Button) rootView.findViewById(R.id.button3);
 
+
         clickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
